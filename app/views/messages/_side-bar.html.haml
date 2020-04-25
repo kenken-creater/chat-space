@@ -1,0 +1,14 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__user
+      .side-bar__header__user__name
+        masa
+      .side-bar__header__user__icons
+        = link_to "#", class: 'side-bar__header__items__icons__new-group' do
+          %i.far.fa-edit
+        = link_to "#", class: 'side-bar__header__items__icons__edit' do
+          %i.fa.fa-cog
+  .side-bar__groups
+    = render "group"
+    = render "group"
+    = render "group"
