@@ -9,19 +9,6 @@
         = link_to "#", class: 'side-bar__header__items__icons__edit' do
           %i.fa.fa-cog
   .side-bar__groups
-    .side-bar__groups__group
-      .side-bar__groups__group__name
-        techcamp
-      .side-bar__groups__group__latest-message
-        まだメッセージがありません
-    .side-bar__groups__group
-      .side-bar__groups__group__name
-        techexpert
-      .side-bar__groups__group__latest-message
-        まだメッセージがありません
-    .side-bar__groups__group
-      .side-bar__groups__group__name
-        プログラマー
-      .side-bar__groups__group__latest-message
-        まだメッセージがありません
-        
+    = render "group"
+    = render "group"
+    = render "group"

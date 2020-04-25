@@ -2,14 +2,13 @@
   box-sizing: border-box;
 }
 
+$white-text: #ffffff;
+
 .wrapper {
   display: flex;
 
   .side-bar {
-    height: 100vh;
-    width: 300px;
-    background-color: #253141;
-
+    
     &__header {
       height: 100px;
       width: 300px;
@@ -26,20 +25,17 @@
         justify-content: space-between;
 
         &__name {
-          color: #ffffff;
+          color: $white-text;
           line-height: 20px;
         }
 
         &__icons {
-          width: 60px;
-          height: 20px;
           line-height: 20px;
           text-align: right;
 
           a {
-            color: #ffffff;
+            color: $white-text;
             text-decoration: none;
-            // margin-left: 5px;
           }
         }
       }
@@ -61,28 +57,25 @@
         &__name {
           font-size: 15px;
           font-weight: bold;
-          color: #ffffff;
+          color: $white-text;
           margin-bottom: 5px;
         }
 
         &__latest-message {
           font-size: 11px;
           font-weight: bold;
-          color: #ffffff;
+          color: $white-text;
         }
       }
     }
   }
 
   .main-chat {
-    height: 100vh;
-    width: calc(100vw - 300px);
-    background-color: #ffffff;
 
     &__header {
       height: 100px;
       width: calc(100vw - 300px);
-      background-color: #ffffff;
+      background-color: $white-text;
       border-bottom: 1px #eeeeee;
       display: flex;
       justify-content: space-between;
@@ -173,8 +166,7 @@
 
         &__input-box {
           height: 50px;
-          width: calc(100% - 100px);
-          
+          width: calc(100% - 100px); 
           display: flex;
           position: relative;
 
@@ -183,7 +175,6 @@
             width: 100%;
             padding: 0 40px 0 10px;
             border-style: none;
-
           }
 
           &__image {
@@ -200,16 +191,13 @@
           height: 50px;
           margin-left: 15px;
           background-color: #38aef0;
-          color: #ffffff;
+          color: $white-text;
           cursor: pointer;
         }
       }
     }
   }
 }
-
-
-
 
 #message_image {
   display: none;
