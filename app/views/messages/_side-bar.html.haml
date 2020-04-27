@@ -4,11 +4,15 @@
       .side-bar__header__user__name
         = current_user.name
       .side-bar__header__user__icons
-        = link_to "#", class: 'side-bar__header__items__icons__new-group' do
+        = link_to new_group_path, class: 'side-bar__header__items__icons__new-group' do
           %i.far.fa-edit
         = link_to edit_user_path(current_user), class: 'side-bar__header__items__icons__edit' do
           %i.fa.fa-cog
   .side-bar__groups
-    = render "group"
-    = render "group"
-    = render "group"
+    - current_user.groups.each do |group|
+      .side-bar__groups__group
+        = link_to '#' do
+          .side-bar__groups__group__name
+            = group.name
+          .side-bar__groups__group__latest-message
+            メッセージはまだありません
