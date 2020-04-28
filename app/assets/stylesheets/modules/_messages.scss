@@ -93,6 +93,11 @@ $white-text: #ffffff;
           padding-top: 15px;
           color: #999999;
           font-size: 12px;
+          display: flex;
+
+          li {
+            margin-left: 4.8px;
+          }
         }
       }
 
@@ -143,7 +148,7 @@ $white-text: #ffffff;
           }
         }
 
-        &__text {
+        &__content {
           color: #434a54;
           font-size: 14px;
         }

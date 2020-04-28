@@ -1,0 +1,22 @@
+.main-chat__footer
+    = form_for [@group, @message], class: "main-chat__footer__new-message" do |f|
+      .main-chat__footer__new-message__input-box      
+        = f.text_field :content,  class: "main-chat__footer__new-message__input-box__text", placeholder: "type a message"          
+        = f.label :image, class: "main-chat__footer__new-message__input-box__image"
+          %i.fa.fa-image
+          = f.file_field :image
+      = f.submit "Send", class: "main-chat__footer__new-message__submit-btn"
+
+
+
+
+
+
+      .main-chat__footer
+    = form_tag "#", class: "main-chat__footer__new-message" do
+      .main-chat__footer__new-message__input-box      
+        = text_field_tag "message", "", placeholder: "type a message", class: "main-chat__footer__new-message__input-box__text"           
+        %label.main-chat__footer__new-message__input-box__image{for: "message_image"}
+          %i.fa.fa-image
+          = file_field_tag "image", id: "message_image"
+      = submit_tag "Send", class: "main-chat__footer__new-message__submit-btn"

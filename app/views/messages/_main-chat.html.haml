@@ -2,23 +2,23 @@
   .main-chat__header
     .main-chat__header__left-box
       .main-chat__header__left-box__group-name
-        test
-      .main-chat__header__left-box__member-name
-        Menber : masa
+        = @group.name
+      %ul.main-chat__header__left-box__member-name
+        Member :
+        - @group.users.each do |user|
+          %li= user.name
+        
     .main-chat__header__right-box
-      = link_to "Edit", "#"
+      = link_to "Edit", edit_group_path(@group.id)
 
   .main-chat__messages
-    = render "message"
-    = render "message"
-    = render "message"
-    
+    = render @messages
+
   .main-chat__footer
-    = form_tag "#", class: "main-chat__footer__new-message" do
+    = form_for [@group, @message], html: { class: "main-chat__footer__new-message" } do |f|
       .main-chat__footer__new-message__input-box      
-        = text_field_tag "message", "", placeholder: "type a message", class: "main-chat__footer__new-message__input-box__text"           
-        %label.main-chat__footer__new-message__input-box__image{for: "message_image"}
+        = f.text_field :content,  class: "main-chat__footer__new-message__input-box__text", placeholder: "type a message"          
+        = f.label :image, class: "main-chat__footer__new-message__input-box__image" do
           %i.fa.fa-image
-          = file_field_tag "image", id: "message_image"
-      = submit_tag "Send", class: "main-chat__footer__new-message__submit-btn"
-        
+          = f.file_field :image
+      = f.submit "Send", class: "main-chat__footer__new-message__submit-btn"
