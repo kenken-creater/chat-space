@@ -1,8 +1,12 @@
 .main-chat__messages__message
   .main-chat__messages__message__about
     .main-chat__messages__message__about__user-name
-      masa
+      = message.user.name
     .main-chat__messages__message__about__date
-      2020/4/24(Fri) 21:30:00
-  .main-chat__messages__message__text
-    おはよう！
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-chat__messages__message__content
+    - if message.content.present?
+      %p= message.content
+  = image_tag message.image.url, class: 'main-chat__messages__message__image' if message.image.present?
+         
+    
