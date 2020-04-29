@@ -128,6 +128,7 @@ $white-text: #ffffff;
       width: calc(100vw - 300px);
       background-color: #fafafa;
       padding: 35px 40px;
+      overflow: scroll;
 
       &__message {
         padding-bottom: 46px;
